@@ -12,8 +12,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run checkFormat"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.js": "eslint",
+    "**/*.{js,json,css,scss}": ["prettier --check", "git add"]
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +44,7 @@
     "gulp": "^4.0.2",
     "gulp-zip": "^5.1.0",
     "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.5.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^5.2.0",
