@@ -8,20 +8,9 @@
     "writeFormat": "prettier --write '**/*.{js,json,css,scss}'",
     "lint": "eslint src",
     "start": "webpack --mode=development --watch",
-    "build": "npm run lint && webpack --mode=production && gulp bundle"
+    "build": "npm run lint && webpack --mode=production && gulp bundle",
+    "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.js": "eslint",
-    "**/*.{js,json,css,scss}": [
-        "prettier --write",
-        "git add"
-    ]
-},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -61,5 +50,9 @@
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
-  ]
+  ],
+  "lint-staged": {
+    "**/*..js": "eslint --cache --fix",
+    "**/*.{js,json,css,scss}": "prettier --write"
+  }
 }
