@@ -1,0 +1,57 @@
+{
+  "name": "ws-blocks",
+  "version": "1.0.0",
+  "description": "Windy Shore Blocks",
+  "main": "index.js",
+  "scripts": {
+    "checkFormat": "prettier --check '**/*.{js,json,css,scss}'",
+    "writeFormat": "prettier --write '**/*.{js,json,css,scss}'",
+    "lint": "eslint src",
+    "start": "webpack --mode=development --watch",
+    "build": "npm run lint && webpack --mode=production && gulp bundle"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run checkFormat"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/blocks": "^8.0.2",
+    "@wordpress/i18n": "^3.19.2",
+    "jquery": "^3.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@wordpress/browserslist-config": "^3.0.3",
+    "@wordpress/eslint-plugin": "^9.0.3",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "browserslist": "^4.16.5",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0",
+    "husky": "^6.0.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-loader": "^5.2.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ]
+}
