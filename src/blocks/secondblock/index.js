@@ -1,7 +1,7 @@
 import './style.editor.scss'
 import { registerBlockType } from '@wordpress/blocks'
 import { __ } from '@wordpress/i18n'
-console.log(;asdas)
+
 registerBlockType('ws-blocks/secondblock', {
  title: __('Second Block', 'ws-blocks'),
     description: __('Our Second Block', 'ws-blocks'),
