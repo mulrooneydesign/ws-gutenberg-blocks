@@ -11,6 +11,25 @@
      exit;
  }
 
+/*
+* Add new category for new blocks
+*/
+
+function ws_theme_block_categories( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'ws-block-category',
+                'title' => _('Windy Shore Blocks'),
+                'icon' => 'wordpress'
+            )
+        )
+            );
+}; 
+
+add_filter('block_categories','ws_theme_block_categories', 10 , 2);
+
 function ws_block_register_block_type($block_name, $options = array()) {
     register_block_type(
         'ws-blocks/' . $block_name,
@@ -33,7 +52,7 @@ function ws_blocks_register() {
         'ws-blocks-editor-script', 
         plugins_url('dist/editor.js', __FILE__),
         //Array of dependencies
-        array('wp-blocks','wp-i18n','wp-element')
+        array('wp-blocks','wp-i18n','wp-element', 'wp-editor', 'wp-components', 'wp-block-editor')
     );
 
     wp_register_style(

@@ -2,5 +2,15 @@
 * Styles add here are included in the front and backend
 */
 .wp-block-ws-blocks-secondblock {
-  background-color: red;
+    background-color: #545454;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    &.is-style-squared {
+        border-radius: 0;
+    }
+    &.is-style-outline {
+        border-radius: 0;
+        border: 2px solid currentColor;
+    }
 }
