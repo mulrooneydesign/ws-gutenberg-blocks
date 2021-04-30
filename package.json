@@ -29,10 +29,13 @@
         "@wordpress/browserslist-config": "^3.0.3",
         "@wordpress/components": "^13.0.2",
         "@wordpress/editor": "^9.26.2",
+        "@wordpress/element": "^2.20.2",
         "@wordpress/eslint-plugin": "^9.0.3",
         "autoprefixer": "^10.2.5",
         "babel-loader": "^8.2.2",
         "browserslist": "^4.16.5",
+        "chokidar": "^3.5.1",
+        "classnames": "^2.3.1",
         "css-loader": "^5.2.4",
         "eslint": "^7.25.0",
         "eslint-config-prettier": "^8.3.0",
@@ -55,6 +58,11 @@
     "browserslist": [
         "extends @wordpress/browserslist-config"
     ],
+    "browser": {
+        "fs": false,
+        "path": false,
+        "os": false
+    },
     "lint-staged": {
         "**/*..js": "eslint --cache --fix",
         "**/*.{js,json,css,scss}": "prettier --write"

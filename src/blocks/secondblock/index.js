@@ -1,14 +1,8 @@
 import "./style.editor.scss";
 import { registerBlockType } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
-import {
-    BlockControls,
-    RichText,
-    AlignmentToolbar,
-    InspectorControls,
-    PanelColorSettings
-} from "@wordpress/block-editor";
-//import { PanelBody, ToggleControl, ColorPalette } from '@wordpress/components'
+import Edit from "./edit";
+import Save from "./save";
 
 registerBlockType("ws-blocks/secondblock", {
     title: __("Second Block", "ws-blocks"),
@@ -58,77 +52,14 @@ registerBlockType("ws-blocks/secondblock", {
         },
         textColor: {
             type: "string"
+        },
+        customBackgroundColor: {
+            type: "string"
+        },
+        customTextColor: {
+            type: "string"
         }
     },
-    edit: ({ className, attributes, setAttributes }) => {
-        const { content, alignment, backgroundColor, textColor } = attributes;
-
-        const onChangeContent = content => {
-            setAttributes({ content: content });
-        };
-        const onChangeAlignment = alignment => {
-            setAttributes({ alignment });
-        };
-        const onChangeBackgroundColor = backgroundColor => {
-            setAttributes({ backgroundColor });
-        };
-        const onChangeTextColor = textColor => {
-            setAttributes({ textColor });
-        };
-
-        return (
-            <>
-                <InspectorControls>
-                    <PanelColorSettings
-                        title={__("Color Settings", "ws-blocks")}
-                        colorSettings={[
-                            {
-                                value: backgroundColor,
-                                onChange: onChangeBackgroundColor,
-                                label: __("Background Color", "ws-blocks")
-                            },
-                            {
-                                value: textColor,
-                                onChange: onChangeTextColor,
-                                label: __("Text Color", "ws-blocks")
-                            }
-                        ]}
-                    />
-                </InspectorControls>
-                <BlockControls>
-                    <AlignmentToolbar
-                        value={alignment}
-                        onChange={onChangeAlignment}
-                    />
-                </BlockControls>
-                <RichText
-                    tagName="p"
-                    className={className}
-                    onChange={onChangeContent}
-                    value={content}
-                    allowedFormats={["core/bold", "core/italic"]}
-                    style={{
-                        textAlign: alignment,
-                        backgroundColor: backgroundColor,
-                        color: textColor
-                    }}
-                />
-            </>
-        );
-    },
-    save: ({ attributes }) => {
-        const { content, alignment, backgroundColor, textColor } = attributes;
-
-        return (
-            <RichText.Content
-                tagName="p"
-                value={content}
-                style={{
-                    textAlign: alignment,
-                    backgroundColor: backgroundColor,
-                    color: textColor
-                }}
-            />
-        );
-    }
+    edit: Edit,
+    save: Save
 });
