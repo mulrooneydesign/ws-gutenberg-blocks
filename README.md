@@ -5,7 +5,7 @@ A set of blocks for Wordpress and Gutenberg
 This is a work in progress that I'm using to base future blocks off of. 
 
 ## Install 
-npm -install
+npm install
 
 ## Start
 Used to run the package in development mode.
