@@ -6,13 +6,16 @@ This is a work in progress that I'm using to base future blocks off of.
 
 ## Install 
 npm install
+Install the dependencies
 
 ## Start
-Used to run the package in development mode.
 npm start
+Used to run the package in development mode.
+
 
 ## Build
-used to compile the package into a production ready bundle and zip file
 npm run build
+used to compile the package into a production ready bundle and zip file
+
 
 --check package.json for other commands. 
