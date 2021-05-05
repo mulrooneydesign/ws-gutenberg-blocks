@@ -1,2 +1,2 @@
-import "./blocks/firstblock"
-import "./blocks/secondblock"
+import "./blocks/hero-banner";
+import "./blocks/story-block";

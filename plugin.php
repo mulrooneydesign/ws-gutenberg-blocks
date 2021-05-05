@@ -52,7 +52,16 @@ function ws_blocks_register() {
         'ws-blocks-editor-script', 
         plugins_url('dist/editor.js', __FILE__),
         //Array of dependencies
-        array('wp-blocks','wp-i18n','wp-element', 'wp-editor', 'wp-components', 'wp-block-editor')
+        array(
+            'wp-blocks',
+            'wp-i18n',
+            'wp-element', 
+            'wp-editor', 
+            'wp-components', 
+            'wp-block-editor', 
+            'wp-blob',
+            'wp-data'
+        )
     );
 
     wp_register_style(
@@ -75,8 +84,8 @@ function ws_blocks_register() {
         plugins_url('dist/style.css', __FILE__)
     );
 
-    ws_block_register_block_type('firstblock');
-    ws_block_register_block_type('secondblock');
+    ws_block_register_block_type('hero-banner');
+    ws_block_register_block_type('story-block');
 }
 
  add_action('init', 'ws_blocks_register');

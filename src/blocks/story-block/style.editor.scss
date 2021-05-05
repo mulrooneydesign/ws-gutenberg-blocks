@@ -1,0 +1,24 @@
+[data-type="ws-blocks/story-block"] .about-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.is-selected {
+    outline: 1px solid pink;
+}
+
+.about-row {
+    max-width: none !important;
+}
+
+.editor-button {
+    background-color: #00a5de;
+    display: inline-block;
+    font-family: "Korolev", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    border-radius: 0;
+    border: 0;
+    padding: 18px 21px;
+    text-transform: uppercase;
+}

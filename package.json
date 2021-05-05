@@ -14,7 +14,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@wordpress/blob": "^2.13.2",
         "@wordpress/blocks": "^8.0.2",
+        "@wordpress/data": "^4.27.3",
         "@wordpress/i18n": "^3.19.2",
         "@wordpress/rich-text": "^3.25.2",
         "jquery": "^3.6.0",
