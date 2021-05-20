@@ -86,6 +86,7 @@ function ws_blocks_register() {
 
     ws_block_register_block_type('hero-banner');
     ws_block_register_block_type('story-block');
+    ws_block_register_block_type('text-banner');
 }
 
  add_action('init', 'ws_blocks_register');

@@ -3,6 +3,11 @@
     grid-template-columns: 1fr 1fr;
 }
 
+[data-type="ws-blocks/hero-banner"] {
+    max-width: none !important;
+    background-color: dark-grey;
+}
+
 .is-selected {
     outline: 1px solid pink;
 }

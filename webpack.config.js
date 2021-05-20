@@ -78,6 +78,10 @@ module.exports = (env, argv) => {
                         },
                         "sass-loader"
                     ]
+                },
+                {
+                    test: /\.svg$/,
+                    use: ["@svgr/webpack"]
                 }
             ]
         },

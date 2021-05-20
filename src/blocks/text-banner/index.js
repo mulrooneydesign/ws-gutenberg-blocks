@@ -11,26 +11,20 @@ const attributes = {
         attribute: "style"
     },
     explainerText: {
-        type: "string",
+        type: "html",
         tag: "p.explainerText"
     },
-    linkText: {
-        type: "string",
+    subText: {
+        type: "html",
         source: "text",
-        selector: "a"
-    },
-    linkUrl: {
-        type: "string",
-        source: "attribute",
-        selector: "a",
-        attribute: "href"
+        selector: "p"
     }
 };
 
-registerBlockType("ws-blocks/hero-banner", {
-    title: __("Hero Banner", "ws-blocks"),
+registerBlockType("ws-blocks/text-banner", {
+    title: __("Text Banner", "ws-blocks"),
     description: __(
-        "Fullwidth page banner with logo and a call to action button",
+        "Fullwidth page text banner with background image",
         "ws-blocks"
     ),
     icon: "welcome-view-site",

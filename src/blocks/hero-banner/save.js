@@ -1,15 +1,29 @@
+import { RichText } from "@wordpress/block-editor";
+import { useBlockProps } from "@wordpress/block-editor";
+import LogoImage from "./logo.svg";
+
 const Save = ({ attributes }) => {
-    const { imageUrl, explainerText, buttonUrl, buttonText } = attributes;
+    const { imageUrl, explainerText, linkUrl, linkText } = attributes;
+
+    const blockProps = useBlockProps.save({ className: "hero" });
 
     return (
-        <section className="hero" style={`background-image: url(${imageUrl});`}>
+        <section
+            {...blockProps}
+            style={imageUrl ? `background-image: url(${imageUrl});` : null}
+        >
             <div className="overlay"></div>
             <div className="hero-inner">
-                <div className="logo">Logo Here</div>
-                <p className="explainerText">{explainerText}</p>
-                <a className="buttonText button" href={buttonUrl}>
-                    {buttonText}
-                </a>
+                <div className="logo">
+                    <LogoImage />
+                </div>
+                <RichText.Content tagName="p" value={explainerText} />
+                <RichText.Content
+                    className="buttonText button"
+                    tagName="a"
+                    href={linkUrl}
+                    value={linkText}
+                />
             </div>
         </section>
     );
